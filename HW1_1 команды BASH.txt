@@ -1,0 +1,84 @@
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir pizza
+
+3) Зайти в папку
+cd pizza
+
+4) Создать 3 папки
+mkdir dough cheese tomatoes
+
+5) Зайти в любую папку
+cd dough
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch flour.txt water.txt salt.txt yeast.json egg.json
+
+7) Создать 3 папки
+mkdir 1 2 3
+
+8. Вывести список содержимого папки
+ls -la 
+
+9) + Открыть любой txt файл
+cat salt.txt
+
+10) + написать туда что-нибудь, любой текст.
+cat >> salt.txt
+морская
+йодированная
+
+11) + сохранить и выйти.
+Ctrl+C
+
+12) Выйти из папки на уровень выше
+cd ../
+
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv dough/flour.txt dough/salt.txt cheese
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp cheese/flour.txt cheese/salt.txt tomatoes
+
+15) Найти файл по имени
+find . -name "water.txt"
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f water.txt | grep 15
+
+17) вывести несколько первых строк из текстового файла
+head -2 salt.txt
+
+18) вывести несколько последних строк из текстового файла
+tail -n3 water.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less water.txt
+q
+
+20) вывести дату и время
+date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+
+подзадание с сервера
+curl "http://162.55.220.72:5005/get_method?name=Svetlana&age=34"
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+cd pizza
+mkdir dough cheese tomatoes
+cd dough
+touch flour.txt water.txt salt.txt yeast.json egg.json
+mkdir 1 2 3
+ls -la
+mv flour.txt salt.txt ../cheese
